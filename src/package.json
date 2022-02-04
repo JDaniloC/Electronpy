@@ -1,0 +1,17 @@
+{
+  "name": "Electronpy",
+  "version": "1.0.0",
+  "description": "A model project to connect Electron with Python",
+  "main": "index.js",
+  "repository": "https://github.com/JDaniloC/Electronpy",
+  "author": "JDaniloC",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "17.0.0",
+    "electron-rebuild": "^3.2.7"
+  },
+  "dependencies": {}
+}
