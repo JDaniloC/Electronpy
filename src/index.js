@@ -5,7 +5,7 @@ const { URL } = require("url");
 const path = require('path');
 
 const { 
-    devToolsEnabled, pyDistFolder, 
+    devToolsEnabled, indexFolder, pyDistFolder, 
     pyFolder, pyModule, pyPort, pyBin
 } = require("./config");
 
@@ -74,7 +74,7 @@ const createWindow = () => {
         }
     })
     const indexPath = new URL(path.join(
-        'file://', __dirname, 'index.html'
+        'file://', __dirname, indexFolder, 'index.html'
     ));
     mainWindow.loadURL(indexPath.href)
     

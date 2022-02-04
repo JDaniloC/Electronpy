@@ -108,7 +108,7 @@ def connect_websocket(new_websocket):
     while True:
         message = new_websocket.receive()
         if message is not None:
-            spawn(websocket_client.on_message, new_websocket, message)
+            spawn(websocket_client.on_message, message)
         else: break
     print("Websocket client disconnected.")
 

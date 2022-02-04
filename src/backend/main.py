@@ -2,6 +2,8 @@ import connector
 
 @connector.expose
 def python_world():
-    print("Hello from python world")
+    result = "Hello from python world"
+    print(result)
+    return result
 
 connector.start(quiet = False)
