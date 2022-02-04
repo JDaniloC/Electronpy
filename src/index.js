@@ -1,7 +1,9 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
-const path = require('path')
+const { app, BrowserWindow } = require('electron');
+const { config: startEnv } = require("dotenv");
+const { URL } = require("url");
+const path = require('path');
+
+startEnv();
 
 /*************************************************************
  * window management
@@ -16,12 +18,14 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js')
         }
     })
-    mainWindow.loadURL(require('url').format({
-        pathname: path.join(__dirname, 'index.html'),
-        protocol: 'file:',
-        slashes: true
-    }))
-    // mainWindow.webContents.openDevTools()
+    const indexPath = new URL(path.join(
+        'file://', __dirname, 'index.html'
+    ));
+    mainWindow.loadURL(indexPath.href)
+    
+    if (process.env.DEV_TOOLS) {
+        mainWindow.webContents.openDevTools()
+    }
 
     mainWindow.on('closed', () => {
         mainWindow = null

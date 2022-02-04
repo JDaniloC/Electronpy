@@ -13,5 +13,7 @@
     "electron": "17.0.0",
     "electron-rebuild": "^3.2.7"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^16.0.0"
+  }
 }
