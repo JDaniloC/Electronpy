@@ -1,5 +1,5 @@
+from .handler import connect_websocket, spawn, _javascript_call
 from bottle.ext import websocket as bottle_websocket
-from .handler import connect_websocket, spawn
 import bottle
 
 def start(port = 4949, block = True, quiet = True):

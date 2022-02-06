@@ -122,6 +122,9 @@ const connector = {
         const py_function = functions[i];
         connector._import_py_function(py_function);
       }
+      connector.export_javascript_functions(
+        Object.keys(connector._exposed_functions)
+      )();
     });
     console.log("Connected to Python backend");
   }

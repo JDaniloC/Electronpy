@@ -80,7 +80,7 @@ class WebsocketClient:
                 print("Error:", message["error"], message["stack"])
             del self._call_return_callbacks[call_id]
         else:
-            self._call_return_values[call_id] = message("value", None)
+            self._call_return_values[call_id] = message.get("value", None)
 
     def on_message(self, message):
         """Method to process websocket messages."""
