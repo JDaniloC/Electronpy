@@ -10,7 +10,7 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron": "22.3.25",
+    "electron": "28.3.2",
     "electron-rebuild": "^3.2.7"
   },
   "dependencies": {
